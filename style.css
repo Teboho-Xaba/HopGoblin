@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+}
+body{
+    background: linear-gradient(254.59deg, #4d9559 0%, #38703d 28.53%, #133917 72.52%);
+}
+header{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 9%;
+}
+.logo{
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+}
+.navlist{
+    display: flex;
+}
+.navlist a{
+    color: #fff;
+    margin-left: 60px;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .5s ease;
+}
+.navlist a:hover{
+    border-bottom: 2px solid #fff;
+}
+#menu-icon{
+    font-size: 32px;
+    color: #fff;
+    z-index: 1001;
+    cursor: pointer;
+    display: none;
+}
+section{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 19%;
+}
+.hero{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+.hero-text h5{
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 32px;
+}
+.hero-text h4{
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.hero-text h1{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 72px;
+    line-height: 1;
+    color: #fff;
+    margin: 0 0 24px;
+}
+.hero-text p{
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+.hero-img img{
+    width: 480px;
+    height: 480px;
+}
+.hero-text a{
+    display: inline-block;
+    color: #fff;
+    background: #4d9559;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    padding: 12px 28px;
+    margin-right: 8px;
+    line-height: 1.4;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+.hero-text a:hover{
+    background: transparent;
+    border: 1px solid #fff;
+    transform: translate(8px);
+}
+
+.products{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.products h3{
+    font-family: cursive;
+    color: #fff;
+    font-size: 44px;
+    font-weight: 700;
+    margin: 1.5rem 0;
+}
+.brands{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+.brands .dell, .mac, .hp, .acer{
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 32px;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 1.5rem;
+    padding: 32px;
+}
+.dell, .mac, .hp, .acer{
+    width: 400px;
+    aspect-ratio: 1/0.7;
+    border-radius: 8px;
+    position: relative;
+}
+.brands .img-box{
+    width: 180px;
+    height: auto;
+}
+.brands .img-box img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    transition: 0.5s ease-in-out;
+}
+.dell::after, .mac::after, .hp::after, .acer::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid #fff;
+    border-radius: inherit;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+.dell:hover img, .mac:hover img, .hp:hover img, .acer:hover img{
+    filter: grayscale(1) brightness(0.4);
+}
+.dell:hover::after, .mac:hover::after, .hp:hover::after, .acer:hover::after{
+    opacity: 1;
+    inset: 20px;
+}
+.dell:hover .content p, .mac:hover .content p, .hp:hover .content p, .acer:hover .content p{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media screen and (max-width:1535px) {
+    header{
+        padding: 15px 3%;
+        transition: .2s;
+    }
+}
+@media screen and (max-width:1460px) {
+    section{
+        padding: 0 12%;
+        transition: .2s;
+    }
+}
+@media screen and (max-width:1340px) {
+    .hero-img img{
+        width: 100%;
+        height: auto;
+    }
+    .hero-text h1{
+        font-size: 76px;
+        margin: 0 0 28px;
+    }
+    .hero-text h5{
+        margin-bottom: 24px;
+    }
+}
+@media screen and (max-width:1195px){
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+    .hero-text{
+        padding-top: 116px;
+    }
+    .hero-img{
+        text-align: center;
+    }
+    .hero-img img{
+        width: 560px;
+        height: auto;
+    }
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width:990px){
+    #menu-icon{
+        display: block;
+    }
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 300px;
+        height: 40vh;
+        background: #4d9559;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 52px 24px;
+        transition: all .5s ease;
+    }
+    .navlist a{
+        display: block;
+        margin: 8px 0;
+        margin-left: 0;
+    }
+    .navlist.open{
+        right: 0;
+    }
+    .products .brands{
+        grid-template-columns: 1fr;
+        margin: 1rem;
+        width: 100%;
+    }
+}
+@media screen and (max-width:680px){
+    section{
+        margin: 0 1rem;
+    }
+    .hero-img img{
+        width: 100%;
+        height: auto;
+    }
+}
